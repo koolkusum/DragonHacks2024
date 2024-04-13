@@ -92,18 +92,20 @@ class Review(Document):
     }
     
 
- 
-
-@app.route("/")
-def mainpage():
+def load():
     course1=Course(
     cid=111,
+    pids=[0,1],
     name = "Introduction to Computer Science",
     lesson = "Teach the princples of Java programming.",
     coding = True,
     theory = False
 )
     course1.save()
+     
+@app.route("/")
+def mainpage():
+    #load()
     return render_template("main.html")
 
 @app.route("/signup", methods=["GET", "POST"])
