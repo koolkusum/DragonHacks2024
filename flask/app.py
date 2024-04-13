@@ -5,6 +5,7 @@ import certifi
 from dotenv import load_dotenv
 import random
 from flask import Flask, jsonify, render_template, redirect, request, session, url_for, g, session
+import mongoengine
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from mongoengine import Document, StringField, ListField, BooleanField, IntField
@@ -38,6 +39,7 @@ load_dotenv()
 MONGODB_URL = os.getenv("MONGODB_URL")
 client = MongoClient(MONGODB_URL, tlsCAFile=certifi.where())
 
+
 oauth = OAuth(app)
 oauth.register(
     "oauthApp",
@@ -55,10 +57,10 @@ try:
 except Exception as e:
     print(e)
 
-db = client.flask_db
-
+mongoengine.connect(host=MONGODB_URL, tlsCAFile=certifi.where())
 class Course(Document):
     cid = IntField(required=True, unique=True)
+    name = StringField(required=True)
     pids = ListField(IntField())
     lesson = StringField()
     coding = BooleanField()
@@ -90,8 +92,20 @@ class Review(Document):
     }
     
 
+def load():
+    course1=Course(
+    cid=111,
+    pids=[0,1],
+    name = "Introduction to Computer Science",
+    lesson = "Teach the princples of Java programming.",
+    coding = True,
+    theory = False
+)
+    course1.save()
+     
 @app.route("/")
 def mainpage():
+    #load()
     return render_template("main.html")
 
 @app.route("/signup", methods=["GET", "POST"])
