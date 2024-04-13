@@ -7,5 +7,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../static/chatbot.css"
 </head>
+<body>
+    <h1>ProfessorDetails</h1>
+    <h2>{{ prof.name }}</h2>
+    <p>{{ prof.description }}</p>
+    <p>Requires Attendance: {% if prof.attendance %} Yes {% else %} No {% endif %}</p>
+
+    <h3>Courses Taught:</h3>
+    <ul>
+        {% for course_id in prof.cids %}
+        {% set course = courses.filter(cid=course_id).first() %}
+        <li>{{ course.name }}</li>
+        <a href="{{ url_for('course', course_id=course.cid) }}">View Details</a>
+    {% endfor %}
+    </ul>
+</body>
 
 </html>

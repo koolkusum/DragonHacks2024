@@ -256,10 +256,6 @@ def send_message():
     
     return jsonify({'message': formatted_message, 'chat_history': chat_history})
 
-@app.route('/forum')
-def forum():
-    courses = Course.objects()
-    return render_template('forum.html', courses=courses)
 
 @app.route("/upload", methods=["GET", "POST"])
 def upload():
@@ -596,15 +592,28 @@ def rank_keywords():
     print(response)
 
     # Return the ranked keywords as JSON
-    return jsonify({'keywords': response})@app.route('/course/<int:course_id>')
+    return jsonify({'keywords': response})
+
+
+
+@app.route('/forum')
+def forum():
+    courses = Course.objects()
+    return render_template('forum.html', courses=courses)
+
+@app.route('/course/<int:course_id>')
 def course(course_id):
     course = Course.objects(cid=course_id).first()  # Retrieve the course with the specified ID
-    return render_template('course.html', course=course)
+    professors = Professor.objects()  # Retrieve all professors
+
+    return render_template('course.html', course=course,  professors=professors)
 
 @app.route('/professor/<int:prof_id>')
 def professor(prof_id):
-    prof = Professor.objects(cid=prof_id).first()
-    return render_template('professor.html', prof=prof)
+    prof = Professor.objects(pid=prof_id).first()
+    courses = Course.objects()
+    return render_template('professor.html', prof=prof, courses=courses)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

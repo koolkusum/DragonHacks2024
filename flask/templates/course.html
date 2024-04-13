@@ -14,6 +14,20 @@
     <p>Lesson: {{ course.lesson }}</p>
     <p>Coding: {% if course.coding %} Yes {% else %} No {% endif %}</p>
     <p>Theory: {% if course.theory %} Yes {% else %} No {% endif %}</p>
+    <p>Professor IDs: {{ course.pids }}</p>
+
+    
+    <!-- Displaying Professor Names -->
+    <h3>Professors:</h3>
+    <ul>
+        {% for prof_id in course.pids %}
+        {% set professor = professors.filter(pid=prof_id).first() %}
+        <li>{{ professor.name }}</li>
+        <a href="{{ url_for('professor', prof_id=professor.pid) }}">View Details</a>
+    {% endfor %}
+    </ul>
+    <!-- End Displaying Professor Names -->
+    
     <!-- Add more details as needed -->
 </body>
 </html>
