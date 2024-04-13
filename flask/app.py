@@ -75,6 +75,9 @@ class Professor(Document):
     rids =ListField(IntField())
     attendance = BooleanField()
     cids = ListField(IntField())
+    meta = {
+        'collection': 'professors'
+    }
     
 class Review(Document):
     rid = IntField(required=True, unique=True)
@@ -82,6 +85,9 @@ class Review(Document):
     title = StringField(required=True)
     desciption = StringField(required=True)
     cid=IntField(required=True)
+    meta = {
+        'collection': 'reviews'
+    }
     
 
 @app.route("/")
