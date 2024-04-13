@@ -16,6 +16,8 @@
             <p>Course ID: {{ course.cid }}</p>
             <p>Coding: {% if course.coding %} Yes {% else %} No {% endif %}</p>
             <p>Theory: {% if course.theory %} Yes {% else %} No {% endif %}</p>
+            <a href="{{ url_for('course', course_id=course.cid) }}">View Details</a>  <!-- Link to course page -->
+
         </li>
         {% endfor %}
     </ul>

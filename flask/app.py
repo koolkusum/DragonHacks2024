@@ -93,15 +93,24 @@ class Review(Document):
     
 
 def load():
-    course1=Course(
-    cid=111,
-    pids=[0,1],
-    name = "Introduction to Computer Science",
-    lesson = "Teach the princples of Java programming.",
-    coding = True,
-    theory = False
-)
-    course1.save()
+#     course1=Course(
+#     cid=111,
+#     pids=[0],
+#     name = "Introduction to Computer Science",
+#     lesson = "Teach the princples of Java programming.",
+#     coding = True,
+#     theory = False
+# )
+#     course1.save()
+    
+    prof1= Professor(
+    pid = 0,
+    name = "Ana Centeno",
+    desc="Ana Centeno is head coordinator of Introduction to Computer Science and  Data Structures.",
+    attendance = False,
+    cids = [111]
+    )
+    prof1.save()
      
 @app.route("/")
 def mainpage():
@@ -244,7 +253,15 @@ def forum():
     courses = Course.objects()
     return render_template('forum.html', courses=courses)
     
+@app.route('/course/<int:course_id>')
+def course(course_id):
+    course = Course.objects(cid=course_id).first()  # Retrieve the course with the specified ID
+    return render_template('course.html', course=course)
 
+@app.route('/professor/<int:prof_id>')
+def professor(prof_id):
+    prof = Professor.objects(cid=prof_id).first()
+    return render_template('professor.html', prof=prof)
 
 if __name__ == "__main__":
     app.run(debug=True)
