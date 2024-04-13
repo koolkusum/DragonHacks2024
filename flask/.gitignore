@@ -1,2 +1,16 @@
-.env
+*.pyc
 __pycache__/
+
+instance/
+
+.pytest_cache/
+.coverage
+htmlcov/
+env/
+
+dist/
+build/
+*.egg-info
+.env
+.db
+token.json
