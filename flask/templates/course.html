@@ -5,7 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../static/chatbot.css"
+    <link rel="stylesheet" href="../static/chatbot.css">
 </head>
+<body>
+    <h1>Course Details</h1>
+    <h2>{{ course.name }}</h2>
+    <p>Course ID: {{ course.cid }}</p>
+    <p>Lesson: {{ course.lesson }}</p>
+    <p>Coding: {% if course.coding %} Yes {% else %} No {% endif %}</p>
+    <p>Theory: {% if course.theory %} Yes {% else %} No {% endif %}</p>
+    <p>Professor IDs: {{ course.pids }}</p>
 
+    
+    <!-- Displaying Professor Names -->
+    <h3>Professors:</h3>
+    <ul>
+        {% for prof_id in course.pids %}
+        {% set professor = professors.filter(pid=prof_id).first() %}
+        <li>{{ professor.name }}</li>
+        <a href="{{ url_for('professor', prof_id=professor.pid) }}">View Details</a>
+    {% endfor %}
+    </ul>
+    <!-- End Displaying Professor Names -->
+    
+    <!-- Add more details as needed -->
+</body>
 </html>
