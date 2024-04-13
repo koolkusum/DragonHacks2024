@@ -239,6 +239,11 @@ def send_message():
     
     return jsonify({'message': formatted_message, 'chat_history': chat_history})
 
+@app.route('/forum')
+def forum():
+    courses = Course.objects()
+    return render_template('forum.html', courses=courses)
+    
 
 
 if __name__ == "__main__":
