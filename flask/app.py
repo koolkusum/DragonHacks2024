@@ -1,3 +1,4 @@
+import json
 from os import path, urandom
 import os
 import certifi
@@ -6,7 +7,7 @@ import random
 from flask import Flask, jsonify, render_template, redirect, request, session, url_for, g, session
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
-from mongoengine import Document, StringField, ListField
+from mongoengine import Document, StringField, ListField, BooleanField, IntField
 
 
 from datetime import date, datetime, timedelta, timezone
@@ -56,6 +57,32 @@ except Exception as e:
 
 db = client.flask_db
 
+class Course(Document):
+    cid = IntField(required=True, unique=True)
+    pids = ListField(IntField())
+    lesson = StringField()
+    coding = BooleanField()
+    theory = BooleanField()
+    meta = {
+        'collection': 'courses'
+    }
+
+class Professor(Document):
+    pid = IntField(required=True, unique=True)
+    name = StringField(required=True, unique=True)
+    desc=StringField(required=True)
+    rating = IntField()
+    rids =ListField(IntField())
+    attendance = BooleanField()
+    cids = ListField(IntField())
+    
+class Review(Document):
+    rid = IntField(required=True, unique=True)
+    pid = IntField(required=True)
+    title = StringField(required=True)
+    desciption = StringField(required=True)
+    cid=IntField(required=True)
+    
 
 @app.route("/")
 def mainpage():
