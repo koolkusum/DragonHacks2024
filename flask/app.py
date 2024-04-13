@@ -247,11 +247,18 @@ def send_message():
     
     return jsonify({'message': formatted_message, 'chat_history': chat_history})
 
+@app.route('/forum')
+def forum():
+    courses = Course.objects()
+    return render_template('forum.html', courses=courses)
+
 @app.route("/upload", methods=["GET", "POST"])
 def upload():
     if request.method == "POST":
         if "pdf_file" not in request.files:
             return "No file part"
+
+    
 
         pdf_file = request.files["pdf_file"]
 
