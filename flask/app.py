@@ -33,7 +33,7 @@ import requests
 
 from calendarinter import convert_to_iso8601, delete_calendar_event, get_credentials, parse_datetime_to_day_number, parse_event_details
 
-admin_mode = True
+admin_mode = False
 
 SCOPES = ['https://www.googleapis.com/auth/calendar',  'https://www.googleapis.com/auth/presentations', 'https://www.googleapis.com/auth/documents']
 
