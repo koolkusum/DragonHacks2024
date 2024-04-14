@@ -806,7 +806,7 @@ def match():
                 first_review = Review.objects(rid=prof.rids[0]).first()
                 if first_review:
                     input_value += f". First Review: {first_review.title} - {first_review.desciption}"
-            input_value += " based on this information can you write why this professor will be a good fit for the user,"
+            input_value += " based on this information can you write why this professor will be a good fit for the user. Do not use bolded text formating, write it in plain text. Write 3 sentences maximum describing professor."
             model = genai.GenerativeModel('models/gemini-pro')
             result = model.generate_content(input_value)
             formatted_message = BeautifulSoup(result.text, "html.parser").get_text()
