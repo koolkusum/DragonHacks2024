@@ -21,6 +21,18 @@
         <a href="{{ url_for('course', course_id=course.cid) }}">View Details</a>
     {% endfor %}
     </ul>
+
+    <h3>Reviews:</h3>
+    <ul>
+        {% for review_id in prof.rids %}
+            {% set review = reviews.filter(rid=review_id).first() %}
+            <li>{{ review.title }}</li>
+            <!-- Display the name of the associated course -->
+            {% set course = courses.filter(cid=review.cid).first() %}
+            <p>Course: {{ course.name }}</p>
+            <p>Description: {{ review.desciption }}</p>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>

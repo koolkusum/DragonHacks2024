@@ -111,18 +111,27 @@ def load():
 # )
 #     course1.save()
     
-    prof1= Professor(
+    # prof1= Professor(
+    # pid = 0,
+    # name = "Ana Centeno",
+    # desc="Ana Centeno is head coordinator of Introduction to Computer Science and  Data Structures.",
+    # attendance = False,
+    # cids = [111]
+    # )
+    # prof1.save()
+    
+    review1 = Review(
+    rid = 0,
     pid = 0,
-    name = "Ana Centeno",
-    desc="Ana Centeno is head coordinator of Introduction to Computer Science and  Data Structures.",
-    attendance = False,
-    cids = [111]
+    title = "Centeno is the best professor",
+    desciption ="She is super understanding and caring of her students and does her best to make sure they pass.",
+    cid=111
     )
-    prof1.save()
+    review1.save()
      
 @app.route("/")
 def mainpage():
-    #load()
+    load()
     return render_template("main.html")
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -612,7 +621,8 @@ def course(course_id):
 def professor(prof_id):
     prof = Professor.objects(pid=prof_id).first()
     courses = Course.objects()
-    return render_template('professor.html', prof=prof, courses=courses)
+    reviews = Review.objects()
+    return render_template('professor.html', prof=prof, courses=courses, reviews=reviews)
 
 
 if __name__ == "__main__":
