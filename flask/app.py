@@ -794,16 +794,16 @@ def match():
         # Redirect GET requests to the same page where the form is rendered
         return redirect(url_for('match_form'))
 
-from course_scrape import *
+# from course_scrape import *
 
-def admin_action():
-    cleanup_prof_cids()
+# def admin_action():
+#     cleanup_prof_cids()
 
 @app.route('/admin_action', methods=['POST'])
 def handle_admin_action():
-    if admin_mode:
+    # if admin_mode:
         # Perform admin action here
-        admin_action()
+        # admin_action()
     return redirect(url_for('forum'))
 
 if __name__ == "__main__":

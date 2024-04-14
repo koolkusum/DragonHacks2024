@@ -195,7 +195,7 @@ def clear_specified_pid(pid):
             print(f"PID {pid} not found in course {course.cid}")
 
 # Example usage
-course_urls = get_course_urls()
-if course_urls:
-    for course_url in course_urls:
-        print(course_url)
+# course_urls = get_course_urls()
+# if course_urls:
+#     for course_url in course_urls:
+#         print(course_url)

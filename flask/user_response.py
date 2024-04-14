@@ -15,14 +15,14 @@ async def adduser(message : discord.message.Message, client : discord.Client, us
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!adduser")
         await message.channel.send(file=file, embed=embed)
     else:
-        embed = discord.Embed(title = f'What time do you want Reminder-Bot to message you?', description='Please enter your prefered time in **military time format**.', color=0xFF5733)
+        embed = discord.Embed(title = f'What time do you want PEEK-Bot to message you?', description='Please enter your prefered time in **military time format**.', color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!adduser")
         await message.channel.send(file=file, embed=embed)
         
@@ -48,7 +48,7 @@ async def adduser(message : discord.message.Message, client : discord.Client, us
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                 file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
-                embed.set_author(name="Reminder-Bot says:")
+                embed.set_author(name="PEEK-Bot says:")
                 embed.set_footer(text="!adduser")
                 await message.channel.send(file=file, embed=embed)
             else:
@@ -57,7 +57,7 @@ async def adduser(message : discord.message.Message, client : discord.Client, us
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                 file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
-                embed.set_author(name="Reminder-Bot says:")
+                embed.set_author(name="PEEK-Bot says:")
                 embed.set_footer(text="!adduser")
                 await message.channel.send(file=file, embed=embed)
         except asyncio.TimeoutError:
@@ -65,7 +65,7 @@ async def adduser(message : discord.message.Message, client : discord.Client, us
             embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
             file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
-            embed.set_author(name="Reminder-Bot says:")
+            embed.set_author(name="PEEK-Bot says:")
             embed.set_footer(text="!adduser")
             await message.channel.send(file=file, embed=embed)
 
@@ -76,7 +76,7 @@ async def userinfo(message : discord.message.Message, client : discord.Client, u
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!userinfo")
         await message.channel.send(file=file, embed=embed)
     else:
@@ -87,7 +87,7 @@ async def userinfo(message : discord.message.Message, client : discord.Client, u
         embed = discord.Embed(title=result_title, description=description_string, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!userinfo")
         await message.channel.send(file=file, embed=embed)
 
@@ -98,14 +98,14 @@ async def changereminder(message : discord.message.Message, client : discord.Cli
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!changereminder")
         await message.channel.send(file=file, embed=embed)
     else:
         embed = discord.Embed(title = f'What time do you want to change it to?', description='Please enter in military time format:', color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")      
+        embed.set_author(name="PEEK-Bot says:")      
         embed.set_footer(text="!changereminder")
         await message.channel.send(file=file, embed=embed)
         
@@ -131,7 +131,7 @@ async def changereminder(message : discord.message.Message, client : discord.Cli
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                 file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
-                embed.set_author(name="Reminder-Bot says:")
+                embed.set_author(name="PEEK-Bot says:")
                 embed.set_footer(text="!changereminder")
                 await message.channel.send(file=file, embed=embed)
             else:
@@ -140,7 +140,7 @@ async def changereminder(message : discord.message.Message, client : discord.Cli
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                 file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
-                embed.set_author(name="Reminder-Bot says:")
+                embed.set_author(name="PEEK-Bot says:")
                 embed.set_footer(text="!changereminder")
                 await message.channel.send(file=file, embed=embed)
         except asyncio.TimeoutError:
@@ -149,7 +149,7 @@ async def changereminder(message : discord.message.Message, client : discord.Cli
             embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
             file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
-            embed.set_author(name="Reminder-Bot says:")
+            embed.set_author(name="PEEK-Bot says:")
             embed.set_footer(text="!changereminder")
             await message.channel.send(file=file, embed=embed)
 
@@ -160,14 +160,14 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!deleteuser")
         await message.channel.send(file=file, embed=embed)
     else:
         embed = discord.Embed(title = f'Are you sure?', description='Please return either:', color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.add_field(name="YES", value= "to confirm the delete action")
         embed.add_field(name="NO", value= "to exit the delete action")        
         embed.set_footer(text="!adduser")
@@ -185,7 +185,7 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                 file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
-                embed.set_author(name="Reminder-Bot says:")
+                embed.set_author(name="PEEK-Bot says:")
                 embed.set_footer(text="!adduser")
                 await message.channel.send(file=file, embed=embed)
             elif exit_action_content.upper() == 'NO':
@@ -194,7 +194,7 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                 file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
-                embed.set_author(name="Reminder-Bot says:")
+                embed.set_author(name="PEEK-Bot says:")
                 embed.set_footer(text="!adduser")
                 await message.channel.send(file=file, embed=embed)
             else:
@@ -203,7 +203,7 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                 file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
-                embed.set_author(name="Reminder-Bot says:")
+                embed.set_author(name="PEEK-Bot says:")
                 embed.set_footer(text="!adduser")
                 await message.channel.send(file=file, embed=embed)
         except asyncio.TimeoutError:
@@ -212,6 +212,6 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
             embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
             file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
-            embed.set_author(name="Reminder-Bot says:")
+            embed.set_author(name="PEEK-Bot says:")
             embed.set_footer(text="!deleteuser")
             await message.channel.send(file=file, embed=embed)
