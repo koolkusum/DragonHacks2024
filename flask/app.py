@@ -118,6 +118,18 @@ class Professor(Document):
                 Professor.last_pid = last_professor.pid if last_professor else 0
             Professor.last_pid += 1
             self.pid = Professor.last_pid
+            
+    def create_review(self, title, description, cid):
+        review = Review(
+            rid = 1,
+            title=title,
+            desciption=description,
+            cid=cid,
+            pid=self.pid
+        )
+        review.save()
+        self.rids.append(review.rid)
+        self.save()
     
     def add_cid(self, cid):
         # Check if the CID is already in the list
