@@ -698,5 +698,30 @@ def add_review(prof_id):
 
     return redirect(url_for('professor', prof_id=prof_id))
 
+@app.route('/match', methods=['GET'])
+def match_form():
+    courses = Course.objects()
+    return render_template('match.html', courses=courses)
+
+@app.route('/match', methods=['POST'])
+def match():
+    if request.method == 'POST':
+        selected_courses = request.form.getlist('courses[]')
+        attendance = request.form['attendance']
+
+        # Convert the attendance value to a boolean
+        attendance_required = attendance == 'true'
+        courses = Course.objects()
+
+
+        # Find professors who teach the selected courses and meet the attendance preference
+        professors = Professor.objects(cids__in=selected_courses, attendance=attendance_required)
+
+        # Pass the found professors to a template for rendering
+        return render_template('match.html', professors=professors, courses = courses)
+    else:
+        # Redirect GET requests to the same page where the form is rendered
+        return redirect(url_for('match_form'))
+
 if __name__ == "__main__":
     app.run(debug=True)
