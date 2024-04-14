@@ -3,7 +3,7 @@
 <style>
   @import url('../static/colors.css');
 
-  .bg-green {
+  .bg-custom {
     background-color: var(--primary-color) !important;
   }
 </style>
@@ -16,7 +16,7 @@
         <div class="col-lg">
             <div class="card card-header rounded-0 border-0 text-center display-5">
                 {{ day }}
-                <span class="badge bg-success opacity-75 mt-3">{{ day_number }}</span> 
+                <span class="badge bg-custom opacity-75 mt-3">{{ day_number }}</span> 
             </div>
         </div>
         {% endfor %}
