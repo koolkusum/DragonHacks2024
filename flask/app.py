@@ -121,7 +121,6 @@ class Professor(Document):
             
     def create_review(self, title, description, cid):
         review = Review(
-            rid = 1,
             title=title,
             desciption=description,
             cid=cid,
@@ -823,13 +822,13 @@ from course_scrape import *
 from review_gen import *
 
 def admin_action():
-    generate_reviews_for_profs()
+    gen_reviews()
 
 @app.route('/admin_action', methods=['POST'])
 def handle_admin_action():
-    # if admin_mode:
+    if admin_mode:
         # Perform admin action here
-        # admin_action()
+        gen_reviews()
     return redirect(url_for('forum'))
 
 if __name__ == "__main__":
