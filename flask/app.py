@@ -152,7 +152,7 @@ class Professor(Document):
             print(f'CID {cid} not found in Professor {self.name}')
 
 class Review(Document):
-    rid = IntField(required=True, unique=True)
+    rid = mongoengine.fields.AutoField(primary_key=True)
     pid = IntField(required=True)
     title = StringField(required=True)
     desciption = StringField(required=True)
@@ -749,7 +749,6 @@ def add_review(prof_id):
 
         # Create a new review
         review = Review(
-            rid = 1,
             title=title,
             desciption=description,
             cid=course_id,
