@@ -3,18 +3,16 @@
   <div class="bg-info-subtle d-flex flex-column h-100 p-4 gap-4">
     <h1 class="">Match</h1>
     <ul class="list-group">
-      {% for professor in professors %}
+      {% for index in range(professors|length) %}
       <li class="list-group-item">
-        <a
-        href="{{ url_for('professor', prof_id=professor.pid) }}"
-        class="link-underline link-underline-opacity-0"
-        >
-        <h2 class="fs-4">{{ professor.name }}</h2>
-      </a>
-    </li>
+        <a href="{{ url_for('professor', prof_id=professors[index].pid) }}" class="link-underline link-underline-opacity-0">
+          <h2 class="fs-4">{{ professors[index].name }}</h2>
+        </a>
+        <p>{{ generated_descriptions[index] }}</p>
       </li>
       {% endfor %}
     </ul>
+    
     <form method="POST" action="{{ url_for('match') }}">
       <div class="overflow-auto" style="height: 25vw">
         <ul class="list-group mb-3">
