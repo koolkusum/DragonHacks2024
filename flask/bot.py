@@ -70,7 +70,7 @@ def run_discord_bot():
                     embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                     file = discord.File('static/Images/icon.png', filename='icon.png')
                     embed.set_thumbnail(url='attachment://icon.png')
-                    embed.set_author(name="Reminder-Bot says:")
+                    embed.set_author(name="PEEK-Bot says:")
                     print(len(today_tasks))
                     if len(today_tasks) > 0:
                         for item in sorted_data:

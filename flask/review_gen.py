@@ -23,7 +23,7 @@ def generate_reviews_for_profs():
     model = genai.GenerativeModel('models/gemini-pro')
     response = model.generate_content(prompt)
     print(response.text)
-    print(parse_reviews(response.text))
+    #print(parse_reviews(response.text))
 
 def parse_reviews(raw_string):
     # Remove the double quotes around the string and split it into individual records

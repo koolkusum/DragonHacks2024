@@ -827,9 +827,9 @@ def admin_action():
 
 @app.route('/admin_action', methods=['POST'])
 def handle_admin_action():
-    if admin_mode:
+    # if admin_mode:
         # Perform admin action here
-        admin_action()
+        # admin_action()
     return redirect(url_for('forum'))
 
 if __name__ == "__main__":

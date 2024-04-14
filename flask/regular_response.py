@@ -22,7 +22,7 @@ async def hello(message : discord.message.Message):
     embed = discord.Embed(title = chosen_string, description=string, color=0xFF5733)
     file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
-    embed.set_author(name="Reminder-Bot says:")
+    embed.set_author(name="PEEK-Bot says:")
     embed.set_footer(text="!hello")
     await message.channel.send(file=file, embed=embed)
 
@@ -39,7 +39,7 @@ async def time(message : discord.message.Message):
     embed = discord.Embed(title=result_string, color=0xFF5733)
     file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
-    embed.set_author(name="Reminder-Bot says:")
+    embed.set_author(name="PEEK-Bot says:")
     embed.set_footer(text="!time")
     await message.channel.send(file=file, embed=embed)
 
@@ -49,7 +49,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
     embed = discord.Embed(title=result_string, description=help_description, color=0xFF5733)
     file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
-    embed.set_author(name="Reminder-Bot says:")
+    embed.set_author(name="PEEK-Bot says:")
     embed.set_footer(text="!pomodoro")
     await message.channel.send(file=file, embed=embed)
     def check(m):
@@ -62,7 +62,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
             embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
             file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
-            embed.set_author(name="Reminder-Bot says:")
+            embed.set_author(name="PEEK-Bot says:")
             embed.set_footer(text="!pomodoro")
             await message.channel.send(file=file, embed=embed)
             return        
@@ -71,7 +71,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
         embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!adduser")
         await message.channel.send(file=file, embed=embed)
     result_string = f'Enter Break Time'
@@ -79,7 +79,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
     embed = discord.Embed(title=result_string, description=help_description, color=0xFF5733)
     file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
-    embed.set_author(name="Reminder-Bot says:")
+    embed.set_author(name="PEEK-Bot says:")
     embed.set_footer(text="!pomodoro")
     await message.channel.send(file=file, embed=embed)
     def check(m):
@@ -92,7 +92,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
             embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
             file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
-            embed.set_author(name="Reminder-Bot says:")
+            embed.set_author(name="PEEK-Bot says:")
             embed.set_footer(text="!pomodoro")
             await message.channel.send(file=file, embed=embed)
             return        
@@ -101,7 +101,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
         embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!adduser")
         await message.channel.send(file=file, embed=embed)    
     study_time_content = int(study_time.content)
@@ -115,7 +115,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!pomodoro")
         await message.channel.send(file=file, embed=embed)
         for i in range(study_seconds):
@@ -129,7 +129,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
                     embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                     file = discord.File('static/Images/icon.png', filename='icon.png')
                     embed.set_thumbnail(url='attachment://icon.png')
-                    embed.set_author(name="Reminder-Bot says:")
+                    embed.set_author(name="PEEK-Bot says:")
                     embed.set_footer(text="!pomodoro")
                     await message.channel.send(file=file, embed=embed) 
                     return
@@ -141,7 +141,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
         file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
-        embed.set_author(name="Reminder-Bot says:")
+        embed.set_author(name="PEEK-Bot says:")
         embed.set_footer(text="!pomodoro")
         await message.channel.send(file=file, embed=embed)
         for i in range(break_seconds):
@@ -155,7 +155,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
                     embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
                     file = discord.File('static/Images/icon.png', filename='icon.png')
                     embed.set_thumbnail(url='attachment://icon.png')
-                    embed.set_author(name="Reminder-Bot says:")
+                    embed.set_author(name="PEEK-Bot says:")
                     embed.set_footer(text="!pomodoro")
                     await message.channel.send(file=file, embed=embed) 
                     return
@@ -168,7 +168,7 @@ async def help(message : discord.message.Message, client : discord.Client):
     embed = discord.Embed(title=result_string, description=help_description, color=0xFF5733)
     file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
-    embed.set_author(name="Reminder-Bot says:")
+    embed.set_author(name="PEEK-Bot says:")
     embed.add_field(name="!hello", value="returns a friendly greeting!", inline=False)
     embed.add_field(name="!time", value="tells the current time.", inline=False)
     embed.add_field(name="!adduser", value="adds user to the database", inline=False)
@@ -191,7 +191,7 @@ async def invalidInput(message : discord.message.Message, client : discord.Clien
     embed = discord.Embed(title=result_string, description=help_description, color=0xFF5733)
     file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
-    embed.set_author(name="Reminder-Bot says:")
+    embed.set_author(name="PEEK-Bot says:")
     embed.add_field(name="!hello", value="returns a friendly greeting!", inline=False)
     embed.add_field(name="!time", value="tells the current time.", inline=False)
     embed.add_field(name="!adduser", value="adds user to the database", inline=False)
