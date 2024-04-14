@@ -1,0 +1,180 @@
+Introduction to Computer Skills
+103
+Supplement to 111. Teaches skills needed, e.g. using command-line, file systems, debugging. Primarily for students with less experience in using computers.
+Charles Hedrick
+true
+false
+Great Insights in Computer Science
+105
+The class is a tour of the big ideas that make computer science an academic discipline. We tour the architecture of modern computers from bits and logic all the way up to programming languages and software libraries. We probe the insights in computability and algorithm design that make possible massive search engines like Google and help us understand the relation between computation and intelligence. Coursework primarily involves paper-and-pencil problem solving and a very small amount of programming to provide students with hands-on-experience with the concepts we introduce.
+Casimir Kulikowski
+false
+true
+Computing for Math and the Sciences
+107
+This course is designed to introduce the student to computers, programming, and some of the key ideas on which the field of computer science is based. The primary vehicle for doing so is the computer language MATLAB. The use of a program like MAPLE to manipulate symbolic equations is also covered. This course is aimed at students majoring in math or in a physical science.
+Douglas Motto
+true
+true
+Principles of Computer Science
+110
+Computer Science concepts are relevant to many aspects of our lives, from explorations in the fields of science and medicine to digital creations in the fields of art and music. This course introduces students to the central ideas of computer science and explores technologies of computing and their impact on society and culture. áStudents are introduced to web site design, data investigation and manipulation using spreadsheets, collaborative on-line tools, and fundamental computer programming concepts. áStudents develop computational skills and are engaged in the creative aspects of problem solving through programming. Students investigate the global impacts and social implications of computing innovations, data, and the Internet through discussions, projects, and writing.
+Frances Trees
+true
+true
+Introduction to Computer Science
+111
+Intensive introduction to computer science. Problem solving through decomposition. Writing, debugging, and analyzing programs in Java. Algorithms for sorting and searching. Introduction to data structures, recursion.
+Ana Centeno
+true
+false
+Data Structures
+112
+To investigate the essential properties of data structures and algorithms for operating on them; to use these structures as tools to assist algorithm design; to extend exposure to searching, sorting and hashing techniques.
+Sesh Venugopal, Juan Zhai
+false
+ture
+Data 101: Data Literacy
+142
+This class aims to provide you with a basic set of tools for data literacy as well as general view of the impact of data on society and elements of common sense data analysis and reasoning. á A significant piece of the class will be learning foundations of áR. R is a statistical software environment and programming language that weÆll use to analyze and visualize datasets. áLearning simple R will take some work; however, if youÆre able to master the basics covered in this class, youÆll gain a concrete, marketable skill that may very well be extremely useful in your academic and professional life.On the statistical side, weÆll cover basic topics from statistics and probability that are required to argue persuasively using data (a list of some of the topics to be covered can be found below). á This is not a ôtypicalö Statistics 101 class; instead of covering an exhaustive list of topics and asking you to memorize many formulas, our goal is to focus only on the most important topics for convincingly analyzing data now by solving ôhands onö weekly data puzzles.This class is taught in unique manner û students have to solve ôdata puzzlesö (one or more weekly) and ádefend their solutions in class in the so called ôCourt of Dataö. á á Students compete in the semester long competition for the titles of Data Masters (aggregated score for all data puzzles and the project)One of the objectives of the class is to show the danger of false, random conclusions from data and learning right methodology of ôhealthy skepticismö.We will also discuss how not to be fooled by data and show examples of rushed and ad hoc conclusions from so called ôbig dataö in the news and on the web. áIn addition we will examine both upside and downside of big data on the web. áWe will talk about privacy, anonymity ávs personalization and data ownership when we increasingly rely on online services.In Final project á your data findings should have real consequences, preferably ôactionableö and consequential in the real society.
+Tomasz Imielinski
+true
+true
+Computer Application for Business
+170
+Introduction to business application of spreadsheet software, computer technology, data communications, network applications, and structured programming.
+Frances Trees
+true
+false
+Introduction to Discrete Structures I
+205
+To introduce the student to the mathematical tools of logic and induction, and to the basic definitions and theorems concerning relations, functions, and sets. Later courses in the computer science curriculum build on the mathematical foundations covered here. Particular emphasis is placed on inductive definitions and proofs, with application to problems in computer science.
+Swastik Kopparty, Jeffrey Ames
+false
+true
+Introduction to Discrete Structures II
+206
+Provides the background in combinatorics and probability theory required in design and analysis of algorithms, in system analysis, and in other areas of computer science.
+Konstantinos Michmizos
+false
+true
+Data Management for Data Science
+210
+This course is intended to be the third offering in the sequence of courses for the SAS Data Science Certificate program. It is designed to provide students with the knowledge and skills needed to acquire and curate real word data, to explore the data to discover patterns and distributions, and to manage large datasets with databases.Students will learn the minimal aspects of Python as needed to acquire and curate datasets. Much of their work will be done using Python libraries that deliver maximum benefit with minimal programming effort: to get data from various online data sources online, detect which aspects of data are uncurated or unreliable and understand why it is so, learn various domain independent and domain dependent ways to curate the data, and get the curated data into a form that can be explored, managed and analyzed. Students will also learn how to get datasets into database-ready form and do basic analysis of such datasets using relational databases and SQL, and NoSQL databases.The course content is designed to be accessible to all SAS students regardless of their major. Although the course has CS 111 as one of the pre-requisites (for Computer Science students), it does not require students to have any programming experience, since in the other pre-requisite course (CS 142), students are only nominally exposed to R.
+Sesh Venugopal
+true
+false
+Computer Architecture
+211
+This course covers the fundamental issues in the design of modern computer systems, including the design and implementation of key hardware components such as the processor, memory, and I/O devices, and the software/hardware interface.
+Yipeng Huang, David Menendez
+true
+true
+Software Methodology
+213
+This course teaches essential principles, techniques, tools, and methods used to develop large software programs in Java. These include object-oriented programming and design, Unified Modeling Language (UML), testing and debugging, using and documenting APIs, asynchronous (event-driven) programming in a Graphical Use Interface (GUI) framework, code maintenance and version management using CVS, software development using Eclipse, introduction to building software on mobile platforms, introduction to multithreading and network programming, object persistence,
+Sesh Venugopal, Lily Chang
+true
+true
+Systems Programming
+214
+This course teaches students how to think about, build, debug, and test large computer programs. The course stresses learning how to use tools such as debuggers, profilers, source version control systems, and integrated development environments as an essential part of developing large programs. The course also stresses the understanding of how programs execute on today's computers and how to measure and optimize performance. Programming will be in C on Unix systems to introduce students to a new programming eco system, as well as enable the mapping of high-level language constructs to the underlying machine.
+John-Austen Francisco
+true
+true
+Principles of Programming Languages
+314
+Students explore procedures and parameter passing techniques, essential components of function invocation and control flow in programming languages. The course covers type systems, type checking, and type equivalence, crucial for ensuring program correctness and robustness
+He Zhu, John-Austen Francisco
+true
+false
+Numerical Analysis and Computing
+323
+To expose the student to the development, application, and analysis of basic numerical algorithms.
+Mridul Aanjaneya
+true
+true
+Introduction to Imaging and Multimedia
+334
+Introduces fundamental techniques and concepts used in computational imaging and multimedia.ááUpon completion, a successful student will be able to design and implement programs that deal with image, video, and audio data.
+Ahmed Elgammal
+true
+true
+Principles of Information and Data Management
+336
+Describing and querying various forms of information such as structured data in relational databases, unstructured text (IR), semi-structured data (XML, web), deductive knowledge. Conceptual modeling and schema design. Basics of database management system services (transactions, reliability, security, optimization). Advanced topics: finding patterns in data, information mapping and integration. The course focuses on a user's perspective, rather than how one implements DBMS.
+Antonio Miranda Garcia
+true
+true
+Design and Analysis of Computer Algorithms
+344
+To study a variety of useful algorithms and analyze their complexity; by that experience to gain insight into principles and data-structures useful in algorithm design.
+Sepehr Assadi, Aaron Bernstein
+true
+true
+Internet Technology
+352
+To provide a practical understanding of computer networks with respect to system architectures, protocols, and client-server interaction.ááThese objectives are accomplished through extensive laboratory exercises.
+Srinivas Narayana
+true
+true
+Seminar in Computers and Society
+405
+To provide a forum for the study and discussion of the impact of computers on humans and society. For students interested in exploring social, ethical,scientific, and practical implications of the recentweb-based technologies and systems.
+Casimir Kulikowski
+false
+true
+Compilers
+415
+To reveal the general concepts and theoretical foundations of programming language translation and implementation.ááEmphasis will be placed on imperative languages.Recommended for all students interested in programming languages and techniques used to build software tools (i.e., debuggers, browsers).
+Uli Kremer
+true
+true
+Operating Systems Design
+416
+To convey a thorough understanding of the basics of an operating system by studying techniques and algorithms for providing services in a computer system, and to understand implementation aspects of popular systems by means of case studies.
+Badri Nath
+true
+true
+Distributed Systems: Concepts and Design
+417
+Provides an introduction to design principles and concepts of distributed computer systems. The course covers a broad spectrum of topics encompassing system architecture, software abstractions, distributed algorithms, and issues pertaining to distributed environments such as security and fault tolerance.Topics will range from the theoretical to the practical with a strong emphasis on the practical, such as client-server programming, remote procedure/method calls, multicasting, firewall design, distributed file systems, machine virtualization, clustering, cryptography, and authentication protocols.
+Paul Krzyzanowski
+true
+true
+Computer Security
+419
+This course is an undergraduate-level introduction to computer security and is targeted towards seniors and advanced juniors.
+Shiqing Ma
+true
+true
+Brain-Inspired Computing
+425
+The course explores how computation in the human brain can be effectively modeled across the main levels of abstraction (from a single neuron to biological neural networks and system; introduces a time-sensitive computational formalization of brain function based on the model of neuron as a Spike Processing Machine û Spike Neural Networks (SNNs); and employs neuro-mimetic or neuro-inspired SNNs to tackle a problem in a term-wide project. The aim of this course is to provide the student with a solid foundation in the field.
+Konstantinos Michmizos
+true
+true
+Introduction to Computer Graphics
+428
+To provide a broad introduction to the field of Computer Graphics, and to describe the techniques that are commonly used in the graphics industry today (such as in production of special effects, computer animation, 3D interactive games, and VR).
+Mridul Aanjaneya
+true
+true
+Software Engineering
+431
+The course studies the problems, methods, processes and tools involved in the development of large software systems that are reliable and maintainable, and meet their users' needs. This is carried out in the context of a significant, term-long multi-person team project.(In different semesters, this course would focus on either morestandard, centralized systems, or distributed systems. This wouldeffect, to some extent, the choice of topics to be taught (see below),and especially the techniques and tools to be used.)
+Lily Chang
+true
+true
+Introduction to Data Science
+439
+This course covers topics needed to solve problems involving data, which includes preparation (collection and integration), characterization and presentation (information visualization), analysis (machine learning and data mining), and products (applications).
+Andy Gunawardena
+true
+true
+Introduction to Artificial Intelligence
+440
+To provide a broad introduction to Artificial Intelligence. The course will cover both fundamental concepts such as search and knowledge representation, as well as applied work in areas such as planning and vision. This course is intended for both students majoring in Computer Science as well as nonspecialists with the necessary background who wish to acquire a general familiarity witháArtificial Intelligence.
+Troy Mcmahon
+true
+true
