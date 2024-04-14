@@ -804,9 +804,10 @@ def match():
         return redirect(url_for('match_form'))
 
 from course_scrape import *
+from review_gen import *
 
 def admin_action():
-    cleanup_prof_cids()
+    generate_reviews_for_profs()
 
 @app.route('/admin_action', methods=['POST'])
 def handle_admin_action():
