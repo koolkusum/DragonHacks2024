@@ -103,6 +103,7 @@ class Review(Document):
     
 
 def load():
+    return
 #     course1=Course(
 #     cid=111,
 #     pids=[0],
@@ -122,15 +123,16 @@ def load():
     # )
     # prof1.save()
     
-    prof2 = Professor(
-    pid = 1,
-    name = "Brian Harrington",
-    desc="Brian Harrington is a professor of Data Structures and Algorithms.",
-    attendance = False,
-    cids = [111]
-    )
-    prof2.save()
-    print("prof2 saved")
+    # prof2 = Professor(
+    # pid = 1,
+    # name = "Brian Harrington",
+    # desc="Brian Harrington is a professor of Data Structures and Algorithms.",
+    # attendance = False,
+    # cids = [111]
+    # )
+    # prof2.save()
+    # print("prof2 saved")
+    
     # review1 = Review(
     # rid = 0,
     # pid = 0,
