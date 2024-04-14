@@ -67,9 +67,15 @@ def get_course_info(course_url):
                 if label == 'Course Number:':
                     value = course_number
                 field_entries_data[label] = value
-
+        try:
+            if course_name:
+                course_name = course_name.split(' - ')[1]
+            else:
+                course_name = ""
+        except IndexError:
+            course_name = ""
         return {
-            'course_name': course_name.split(' - ')[1] if course_name else None,
+            'course_name': course_name,
             'field_entries': field_entries_data
         }
     else:
@@ -105,5 +111,4 @@ def print_all_courses():
 # Example usage
 course_urls = get_course_urls()
 if course_urls:
-    for course_url in course_urls:
-        print(course_url)
+    print_all_courses()
