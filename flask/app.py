@@ -78,19 +78,67 @@ class Course(Document):
     meta = {
         'collection': 'courses'
     }
+    
+    def add_pid(self, pid):
+        if pid not in self.pids:
+            self.pids.append(pid)
+            # pass through set
+            self.pids = list(set(self.pids))
+            self.save()
+
+    def delete_pid(self, pid):
+        if pid in self.pids:
+            self.pids.remove(pid)
+            self.save()
+            
+    def set_lesson(self, lesson):
+        self.lesson = lesson
+        self.save()
 
 class Professor(Document):
     pid = IntField(required=True, unique=True)
     name = StringField(required=True, unique=True)
-    desc=StringField(required=True)
+    desc = StringField(required=True)
     rating = IntField()
-    rids =ListField(IntField())
+    rids = ListField(IntField())
     attendance = BooleanField()
     cids = ListField(IntField())
     meta = {
         'collection': 'professors'
     }
+
+    last_pid = None  # Static variable to store the last PID
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Set the pid automatically if not provided
+        if not self.pid:
+            if Professor.last_pid is None:
+                last_professor = Professor.objects.order_by('-pid').first()
+                Professor.last_pid = last_professor.pid if last_professor else 0
+            Professor.last_pid += 1
+            self.pid = Professor.last_pid
     
+    def add_cid(self, cid):
+        # Check if the CID is already in the list
+        if cid not in self.cids:
+            self.cids.append(cid)
+            # pass through set to make sure uniqueness
+            self.cids = list(set(self.cids))
+            self.save()
+            print(f'CID {cid} added to Professor {self.name}')
+        else:
+            print(f'CID {cid} already exists in Professor {self.name}')
+            
+    def delete_cid(self, cid):
+        # Check if the CID is in the list
+        if cid in self.cids:
+            self.cids.remove(cid)
+            self.save()
+            print(f'CID {cid} deleted from Professor {self.name}')
+        else:
+            print(f'CID {cid} not found in Professor {self.name}')
+
 class Review(Document):
     rid = IntField(required=True, unique=True)
     pid = IntField(required=True)
@@ -727,10 +775,10 @@ def match():
         # Redirect GET requests to the same page where the form is rendered
         return redirect(url_for('match_form'))
 
-from course_scrape import get_course_urls, print_retrieved_urls, get_course_info, print_course_contents, print_all_courses
+from course_scrape import *
 
 def admin_action():
-    print_all_courses()
+    cleanup_prof_cids()
 
 @app.route('/admin_action', methods=['POST'])
 def handle_admin_action():

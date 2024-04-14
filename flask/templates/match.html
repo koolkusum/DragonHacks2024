@@ -1,18 +1,20 @@
 {% extends "base_template.html" %} 
 {% block content %}
 <div class="container-fluid align-items-center rounded-4 vh-100 p-4">
-  <div class="bg-info-subtle d-flex flex-column h-100 p-4" style="overflow-y: auto;">
-    <h1 class="text-center mb-4">Match</h1>
+  <div class="bg-info-subtle d-flex flex-column h-100 p-4">
+    <h1 class="mb-4">Match</h1>
     <form method="POST" action="{{ url_for('match') }}">
+      <div class="h-25 overflow-auto  ">
       <ul class="list-group mb-3">
-        {% for course in courses %}
+        {% for course in courses|sort(attribute='name') %}
         <li class="list-group-item" aria-current="true">
-          <label>
-            <input type="checkbox" name="courses[]" value="{{ course.cid }}"> {{ course.name }}
-          </label>
+            <label>
+                <input type="checkbox" name="courses[]" value="{{ course.cid }}"> {{ course.name }}
+            </label>
         </li>
         {% endfor %}
-      </ul>
+    </ul>
+  </div>
       <div class="mb-3">
         <label for="attendance" class="form-label">Attendance</label>
         <select class="form-select" id="attendance" name="attendance">
