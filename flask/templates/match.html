@@ -1,10 +1,10 @@
 {% extends "base_template.html" %} 
 {% block content %}
 <div class="container-fluid align-items-center rounded-4 vh-100 p-4">
-  <div class="bg-info-subtle flex flex-wrap h-100 p-4">
-    <h1 class="text-center flex flex-fill display-1">Match</h1>
+  <div class="bg-info-subtle d-flex flex-column h-100 p-4" style="overflow-y: auto;">
+    <h1 class="text-center mb-4">Match</h1>
     <form method="POST" action="{{ url_for('match') }}">
-      <ul class="list-group">
+      <ul class="list-group mb-3">
         {% for course in courses %}
         <li class="list-group-item" aria-current="true">
           <label>
@@ -20,16 +20,23 @@
           <option value="false">Optional</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Find Professors</button>
+      <button type="submit" class="btn btn-primary mb-3">Find Professors</button>
     </form>
-    <h2>Matched Professors:</h2>
-    <ul>
+    <h2 class="mb-3">Matched Professors:</h2>
+    <ul class="list-group">
       {% for professor in professors %}
-        <li>{{ professor.name }}</li>
+      <li class="list-group-item">
+        <a
+        href="{{ url_for('professor', prof_id=professor.pid) }}"
+        class="link-underline link-underline-opacity-0"
+        >
+        <h2>{{ professor.name }}</h2>
+      </a>
+    </li>
+      </li>
       {% endfor %}
     </ul>
   </div>
 </div>
-  </div>
-</div>
+
 {% endblock %}
