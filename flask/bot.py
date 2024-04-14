@@ -1,3 +1,5 @@
+# https://discord.com/oauth2/authorize?client_id=1228866239837769769&permissions=21983791152192&scope=bot
+
 import discord
 from discord.ext import commands
 import os
@@ -66,7 +68,7 @@ def run_discord_bot():
                     result_title = f'**Today Tasks:**'
                     result_description = f'**{user_index[0]}\'s tasks**'
                     embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                    file = discord.File('images/icon.png', filename='icon.png')
+                    file = discord.File('static/Images/icon.png', filename='icon.png')
                     embed.set_thumbnail(url='attachment://icon.png')
                     embed.set_author(name="Reminder-Bot says:")
                     print(len(today_tasks))

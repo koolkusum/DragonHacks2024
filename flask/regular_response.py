@@ -20,7 +20,7 @@ async def hello(message : discord.message.Message):
     chosen_string = options[random.randint(0, len(options) - 1)]
     string = chosen_string + message.author.mention
     embed = discord.Embed(title = chosen_string, description=string, color=0xFF5733)
-    file = discord.File('images/icon.png', filename='icon.png')
+    file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
     embed.set_author(name="Reminder-Bot says:")
     embed.set_footer(text="!hello")
@@ -37,7 +37,7 @@ async def time(message : discord.message.Message):
 
     result_string = f'**Today is:** {year}-{day}-{month}\n**The time is:** {hour}:{minute}:{second}'
     embed = discord.Embed(title=result_string, color=0xFF5733)
-    file = discord.File('images/icon.png', filename='icon.png')
+    file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
     embed.set_author(name="Reminder-Bot says:")
     embed.set_footer(text="!time")
@@ -47,7 +47,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
     result_string = f'Enter Study Time'
     help_description = f'''Enter the minutes of how long you want to study for?'''
     embed = discord.Embed(title=result_string, description=help_description, color=0xFF5733)
-    file = discord.File('images/icon.png', filename='icon.png')
+    file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
     embed.set_author(name="Reminder-Bot says:")
     embed.set_footer(text="!pomodoro")
@@ -60,7 +60,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
             result_title = f'Invalid Output'
             result_description = f'Pomodoro did not start for **{message.author.mention}**'
             embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-            file = discord.File('images/icon.png', filename='icon.png')
+            file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
             embed.set_author(name="Reminder-Bot says:")
             embed.set_footer(text="!pomodoro")
@@ -69,7 +69,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
     except asyncio.TimeoutError:
         string = f'{message.author.mention} has taken too long to respond.'
         embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!adduser")
@@ -77,7 +77,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
     result_string = f'Enter Break Time'
     help_description = f'''Enter the minutes of how long you want to break to be for?'''
     embed = discord.Embed(title=result_string, description=help_description, color=0xFF5733)
-    file = discord.File('images/icon.png', filename='icon.png')
+    file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
     embed.set_author(name="Reminder-Bot says:")
     embed.set_footer(text="!pomodoro")
@@ -90,7 +90,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
             result_title = f'Invalid Output'
             result_description = f'Pomodoro did not start for **{message.author.mention}**'
             embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-            file = discord.File('images/icon.png', filename='icon.png')
+            file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
             embed.set_author(name="Reminder-Bot says:")
             embed.set_footer(text="!pomodoro")
@@ -99,7 +99,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
     except asyncio.TimeoutError:
         string = f'{message.author.mention} has taken too long to respond.'
         embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!adduser")
@@ -113,7 +113,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
         result_title = f'Study Time Started'
         result_description = f'Pomodoro started for **{message.author.mention}**\nStart working for {study_time_content} minutes'
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!pomodoro")
@@ -127,7 +127,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
                     result_title = f'Pomodoro Terminated'
                     result_description = f'Pomodoro terminated for **{message.author.mention}**'
                     embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                    file = discord.File('images/icon.png', filename='icon.png')
+                    file = discord.File('static/Images/icon.png', filename='icon.png')
                     embed.set_thumbnail(url='attachment://icon.png')
                     embed.set_author(name="Reminder-Bot says:")
                     embed.set_footer(text="!pomodoro")
@@ -139,7 +139,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
         result_title = f'Break Time Started'
         result_description = f'Pomodoro started for **{message.author.mention}**\nStart chilling for {break_time_content} minutes'
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!pomodoro")
@@ -153,7 +153,7 @@ async def pomodoro(message : discord.message.Message, client: discord.Client):
                     result_title = f'Pomodoro Terminated'
                     result_description = f'Pomodoro terminated for **{message.author.mention}**'
                     embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                    file = discord.File('images/icon.png', filename='icon.png')
+                    file = discord.File('static/Images/icon.png', filename='icon.png')
                     embed.set_thumbnail(url='attachment://icon.png')
                     embed.set_author(name="Reminder-Bot says:")
                     embed.set_footer(text="!pomodoro")
@@ -166,7 +166,7 @@ async def help(message : discord.message.Message, client : discord.Client):
     result_string = f'!Help'
     help_description = f'''How to use {client.user.mention}'''
     embed = discord.Embed(title=result_string, description=help_description, color=0xFF5733)
-    file = discord.File('images/icon.png', filename='icon.png')
+    file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
     embed.set_author(name="Reminder-Bot says:")
     embed.add_field(name="!hello", value="returns a friendly greeting!", inline=False)
@@ -189,7 +189,7 @@ async def invalidInput(message : discord.message.Message, client : discord.Clien
     result_string = f'[ERROR]: Invalid Input'
     help_description = f'''How to use {client.user.mention}'''
     embed = discord.Embed(title=result_string, description=help_description, color=0xFF5733)
-    file = discord.File('images/icon.png', filename='icon.png')
+    file = discord.File('static/Images/icon.png', filename='icon.png')
     embed.set_thumbnail(url='attachment://icon.png')
     embed.set_author(name="Reminder-Bot says:")
     embed.add_field(name="!hello", value="returns a friendly greeting!", inline=False)

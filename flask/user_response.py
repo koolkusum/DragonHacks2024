@@ -13,14 +13,14 @@ async def adduser(message : discord.message.Message, client : discord.Client, us
         result_title = f'**User Already Created**'
         result_description = f'User already created for **{message.author.mention}**'
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!adduser")
         await message.channel.send(file=file, embed=embed)
     else:
         embed = discord.Embed(title = f'What time do you want Reminder-Bot to message you?', description='Please enter your prefered time in **military time format**.', color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!adduser")
@@ -46,7 +46,7 @@ async def adduser(message : discord.message.Message, client : discord.Client, us
                 result_title = f'**User Created**'
                 result_description = f'User created for **{message.author.mention}**'
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                file = discord.File('images/icon.png', filename='icon.png')
+                file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
                 embed.set_author(name="Reminder-Bot says:")
                 embed.set_footer(text="!adduser")
@@ -55,16 +55,15 @@ async def adduser(message : discord.message.Message, client : discord.Client, us
                 result_title = f'Invalid Output'
                 result_description = f'Did not create user for **{message.author.mention}**'
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                file = discord.File('images/icon.png', filename='icon.png')
+                file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
                 embed.set_author(name="Reminder-Bot says:")
                 embed.set_footer(text="!adduser")
                 await message.channel.send(file=file, embed=embed)
         except asyncio.TimeoutError:
-            # await message.channel.send(f'{message.author.mention} has taken too long to respond.')
             string = f'{message.author.mention} has taken too long to respond.'
             embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
-            file = discord.File('images/icon.png', filename='icon.png')
+            file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
             embed.set_author(name="Reminder-Bot says:")
             embed.set_footer(text="!adduser")
@@ -75,7 +74,7 @@ async def userinfo(message : discord.message.Message, client : discord.Client, u
         result_title = f'**User Not Found**'
         result_description = f'User not found for **{message.author.mention}**'
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!userinfo")
@@ -86,7 +85,7 @@ async def userinfo(message : discord.message.Message, client : discord.Client, u
         result_title = f'Information about {info[0]}'
         description_string = f'**Name:**\t\t{info[0]}\n**Discord ID:**\t{info[1]}\n**Preferred Time:**\t{info[2]}'
         embed = discord.Embed(title=result_title, description=description_string, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!userinfo")
@@ -97,14 +96,14 @@ async def changereminder(message : discord.message.Message, client : discord.Cli
         result_title = f'User Not Found'
         result_description = f'User not found for **{message.author.mention}**'
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!changereminder")
         await message.channel.send(file=file, embed=embed)
     else:
         embed = discord.Embed(title = f'What time do you want to change it to?', description='Please enter in military time format:', color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")      
         embed.set_footer(text="!changereminder")
@@ -130,7 +129,7 @@ async def changereminder(message : discord.message.Message, client : discord.Cli
                 result_title = f'Preference Time Changed'
                 result_description = f'**{message.author.mention}** will be notified at {reminder_action_content}'
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                file = discord.File('images/icon.png', filename='icon.png')
+                file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
                 embed.set_author(name="Reminder-Bot says:")
                 embed.set_footer(text="!changereminder")
@@ -139,7 +138,7 @@ async def changereminder(message : discord.message.Message, client : discord.Cli
                 result_title = f'Invalid Output'
                 result_description = f'Did not change preference time for **{message.author.mention}**'
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                file = discord.File('images/icon.png', filename='icon.png')
+                file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
                 embed.set_author(name="Reminder-Bot says:")
                 embed.set_footer(text="!changereminder")
@@ -148,7 +147,7 @@ async def changereminder(message : discord.message.Message, client : discord.Cli
             # await message.channel.send(f'{message.author.mention} has taken too long to respond.')
             string = f'{message.author.mention} has taken too long to respond.'
             embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
-            file = discord.File('images/icon.png', filename='icon.png')
+            file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
             embed.set_author(name="Reminder-Bot says:")
             embed.set_footer(text="!changereminder")
@@ -159,14 +158,14 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
         result_title = f'User Not Found'
         result_description = f'User not found for **{message.author.mention}**'
         embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.set_footer(text="!deleteuser")
         await message.channel.send(file=file, embed=embed)
     else:
         embed = discord.Embed(title = f'Are you sure?', description='Please return either:', color=0xFF5733)
-        file = discord.File('images/icon.png', filename='icon.png')
+        file = discord.File('static/Images/icon.png', filename='icon.png')
         embed.set_thumbnail(url='attachment://icon.png')
         embed.set_author(name="Reminder-Bot says:")
         embed.add_field(name="YES", value= "to confirm the delete action")
@@ -184,7 +183,7 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
                 result_title = f'**User Deleted**'
                 result_description = f'User deleted for **{message.author.mention}**'
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                file = discord.File('images/icon.png', filename='icon.png')
+                file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
                 embed.set_author(name="Reminder-Bot says:")
                 embed.set_footer(text="!adduser")
@@ -193,7 +192,7 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
                 result_title = f'**Exit Terminated**'
                 result_description = f'Did not delete for **{message.author.mention}**'
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                file = discord.File('images/icon.png', filename='icon.png')
+                file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
                 embed.set_author(name="Reminder-Bot says:")
                 embed.set_footer(text="!adduser")
@@ -202,7 +201,7 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
                 result_title = f'**Invalid Input**'
                 result_description = f'Did not delete for **{message.author.mention}**'
                 embed = discord.Embed(title=result_title, description=result_description, color=0xFF5733)
-                file = discord.File('images/icon.png', filename='icon.png')
+                file = discord.File('static/Images/icon.png', filename='icon.png')
                 embed.set_thumbnail(url='attachment://icon.png')
                 embed.set_author(name="Reminder-Bot says:")
                 embed.set_footer(text="!adduser")
@@ -211,7 +210,7 @@ async def deleteuser(message : discord.message.Message, client : discord.Client,
             # await message.channel.send(f'{message.author.mention} has taken too long to respond.')
             string = f'{message.author.mention} has taken too long to respond.'
             embed = discord.Embed(title= "Timeout Error", description=string, color=0xFF5733)
-            file = discord.File('images/icon.png', filename='icon.png')
+            file = discord.File('static/Images/icon.png', filename='icon.png')
             embed.set_thumbnail(url='attachment://icon.png')
             embed.set_author(name="Reminder-Bot says:")
             embed.set_footer(text="!deleteuser")
