@@ -338,13 +338,10 @@ def upload():
                     bold_text += "<strong>" + line[start_index + 2:end_index] + "</strong>"
                     line = line[:start_index] + bold_text + line[end_index + 2:]
                 formatted_message += line + "<br>"
-            # print(formatted_message)
-            # Save the uploaded PDF temporarily
             filename = secure_filename(pdf_file.filename)
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             filepath = filepath.replace('\\','/')
             print(filepath)
-            # pdf_file.save(filepath)
             def copy_file(source_path, destination_path):
                 try:
                     subprocess.run(['copy', source_path, destination_path], shell=True)
@@ -365,7 +362,7 @@ def upload():
 
             service = build("docs", "v1", credentials=creds)
             doc = {
-                'title': 'Summarized Text Document'
+                'title': filename + " - Summarized"
             }
             doc = service.documents().create(body=doc).execute()
             doc_id = doc.get('documentId')
