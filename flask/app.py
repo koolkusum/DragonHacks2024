@@ -131,7 +131,7 @@ def load():
      
 @app.route("/")
 def mainpage():
-    load()
+   # load()
     return render_template("main.html")
 
 @app.route("/signup", methods=["GET", "POST"])
