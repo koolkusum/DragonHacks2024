@@ -1,16 +1,20 @@
 {% extends "base_template.html" %} {% block content %}
 <div class="container-fluid align-items-center rounded-4 p-4">
-  <div class="flex flex-wrap h-100 p-4">
-    <div>
-    <h1>Search Course by CID</h1>
-    <form action="/search" method="GET">
-        <input type="number" name="cid" placeholder="Search by CID">
-        <button type="submit">Search</button>
-    </form>
-    </div>
+  <div class="flex flex-wrap h-100 p-4 gap-4">
     <h1 class="text-center flex flex-fill display-1 p-4 fw-bold">Courses</h1>
+    <div class="container d-flex justify-content-center g-4">
+      <form action="/search" method="GET" class="row g-3 align-items-center p-4">
+        <div class="col-auto">
+          <label for="inputCID" class="visually-hidden">CID</label>
+          <input type="number" name="cid" id="inputCID" class="form-control" placeholder="Search by CID" required>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+    </div>
     <div class="overflow-auto " style="height:25vw">
-    <ul class="list-group">
+    <ul class="list-group">   
       {% for course in courses %}
       <li class="list-group-item" aria-current="true">
         <a
