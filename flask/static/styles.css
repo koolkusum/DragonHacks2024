@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: black;
     color: #333;
 }
 
@@ -22,7 +22,7 @@ header {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    background-color: #7fce94;
+    background-color: black;
     position: relative;
     display: grid; /* Use grid for layout */
     grid-template-columns: 30% 70%; /* 30% for content, 70% for spline viewer */
@@ -31,7 +31,7 @@ header {
 }
 
 .content {
-    color: white;
+    color: #7fce94;
     text-align: center;
     z-index: 2; /* Set higher z-index for content */
     margin-bottom: 20px;
@@ -47,16 +47,9 @@ header {
     justify-content: center; /* Center items vertically */
 }
 
-.spline-viewer {
-    width: 100%; /* Take up full width of its column */
-    max-width: 100%; /* Ensure it doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 1; /* Set lower z-index for spline viewer */
-}
-
 /* CSS */
 .button-81 {
-  background-color: #fff;
+  background-color: transparent;
   border: 0 solid #e2e8f0;
   border-radius: 1.5rem;
   box-sizing: border-box;
@@ -90,12 +83,6 @@ header {
   }
 }
 
-.spline-viewer {
-    max-width: 100%;
-    height: auto;
-    z-index: 1; /* Set lower z-index for spline viewer */
-}
-
 h1 {
     font-size: 40px;
     margin-bottom: 20px;
@@ -105,6 +92,7 @@ h1 {
 p {
     font-size: 18px;
     line-height: 1.6;
+    color: #7fce94;
 }
 
 

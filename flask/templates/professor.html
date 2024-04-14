@@ -38,5 +38,23 @@
     <p>Description: {{ review.desciption }}</p>
     {% endfor %}
   </ul>
+
+  <!-- Section to Add a Review -->
+  <h3>Add a Review:</h3>
+  <form method="POST" action="{{ url_for('add_review', prof_id=prof.pid) }}">
+      <label for="course">Select Course:</label>
+      <select name="course" id="course">
+          {% for course_id in prof.cids %}
+              {% set course = courses.filter(cid=course_id).first() %}
+              <option value="{{ course.cid }}">{{ course.name }}</option>
+          {% endfor %}
+      </select>
+      <br>
+      <label for="title">Title:</label><br>
+      <input type="text" id="title" name="title" required><br>
+      <label for="description">Description:</label><br>
+      <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+      <input type="submit" value="Submit Review">
+  </form>
 </div>
 {% endblock %}
