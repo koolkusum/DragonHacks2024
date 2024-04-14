@@ -667,6 +667,30 @@ def professor(prof_id):
     reviews = Review.objects()
     return render_template('professor.html', prof=prof, courses=courses, reviews=reviews)
 
+@app.route('/add_review/<int:prof_id>', methods=['POST'])
+def add_review(prof_id):
+    if request.method == 'POST':
+        title = request.form['title']
+        description = request.form['description']
+        course_id = int(request.form['course'])
+
+        # Find the professor
+        professor = Professor.objects(pid=prof_id).first()
+
+        # Create a new review
+        review = Review(
+            rid = 1,
+            title=title,
+            desciption=description,
+            cid=course_id,
+            pid=prof_id
+        )
+        review.save()
+
+        # Add the review ID to the professor's reviews
+        professor.update(push__rids=review.rid)
+
+    return redirect(url_for('professor', prof_id=prof_id))
 
 if __name__ == "__main__":
     app.run(debug=True)
