@@ -16,18 +16,20 @@
   <div class="collapse navbar-collapse d-flex align-items-end justify-content-end " id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="{{ url_for('forum') }}"
-        >Home <span class="sr-only">(current)</span></a
+        >Home <span class="sr-only"></span></a
       >
       <a class="nav-item nav-link" href="{{ url_for('match') }}">Match</a>
       <a class="nav-item nav-link" href="{{ url_for('taskschedule')}}">Tasks</a>
       <a class="nav-item nav-link" href="{{ url_for('calendar')}}">Calendar</a>
-      <a
+      <a class="nav-item nav-link" href="{{ url_for('chatbot')}}">Chat</a>
+      <a class="nav-item nav-link" href="{{ url_for('upload')}}">Upload </a>
+      {#<a
         class="nav-item nav-link disabled"
         href="#"
         tabindex="-1"
         aria-disabled="true"
         >Disabled</a
-      >
+      >#}
     </div>
   </div>
 </nav>
