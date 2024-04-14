@@ -1,60 +1,104 @@
 {% extends "base_template.html" %} {% block content %}
-<div class="container-fluid align-items-center rounded-4 vh-100 p-4">
-  <div class="d-flex align-items-center gap-3">
+<div class="container-fluid align-items-center rounded-4 p-4">
+  <div class="bg-info-subtle p-4">
+    <div class="d-flex align-items-baseline gap-3">
+      <div class="container-fluid overflow-y-hidden">
+        <h3 class="display-5 fw-bold">Courses</h3>
+        <ul class="list-group">
+          {% for course_id in prof.cids %} {% set course =
+          courses.filter(cid=course_id).first() %}
+          <li class="list-group-item" aria-current="true">
+            <a
+              href="{{ url_for('course', course_id=course.cid) }}"
+              class="link-underline link-underline-opacity-0"
+            >
+              <h2>{{ course.name }}</h2>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="bg-body p-4 rounded-3">
+        <h2 class="display-3 text-center fst-italic">{{ prof.name }}</h2>
+        <div class="d-flex justify-content-center my-3">
+          <img
+            src="https://t4.ftcdn.net/jpg/00/64/67/27/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg"
+            alt="Circle Image"
+            class="img-fluid rounded-circle"
+            style="width: 200px; height: 200px"
+          />
+        </div>
+
+        <p class="fst-italic">{{ prof.desc }}</p>
+        <p>
+          <strong> Requires Attendance: </strong> {% if prof.attendance %} Yes
+          {% else %} No {% endif %}
+        </p>
+      </div>
+    </div>
+
+    <!-- Section to Add a Review -->
+    <h3 class="display-5 fw-bold fst-italic py-4">Review this professor</h3>
+    <form method="POST" action="{{ url_for('add_review', prof_id=prof.pid) }}">
+      <div class="mb-3">
+        <label for="course" class="form-label ">Select Course</label>
+        <select name="course" id="course" class="form-select">
+          {% for course_id in prof.cids %} {% set course =
+          courses.filter(cid=course_id).first() %}
+          <option value="{{ course.cid }}">{{ course.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          class="form-control"
+          rows="4"
+          cols="50"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Review</button>
+    </form>
+
     <div class="container-fluid">
-      <h3 class="display-3">Courses</h3>
-      <ul class="list-group">
-        {% for course_id in prof.cids %} {% set course =
-        courses.filter(cid=course_id).first() %}
-        <li class="list-group-item" aria-current="true">
-          <a
-            href="{{ url_for('course', course_id=course.cid) }}"
-            class="link-underline link-underline-opacity-0"
-          >
-            <h2>{{ course.name }}</h2>
-          </a>
+      <h3 class="display-5 text-center fw-bold p-4">Feedback</h3>
+      <ul class="list-group gap-4 h-75 overflow-y-hidden">
+        {% for review_id in prof.rids %} {% set review =
+        reviews.filter(rid=review_id).first() %}
+        <li class="list-group-item rounded-2" aria-current="true">
+          <div class="d-flex p-2 gap-4">
+            <div class="container-sm align-self-center" style="width: 10vw">
+              <img
+                src="https://t4.ftcdn.net/jpg/00/64/67/27/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg"
+                alt="Circle Image"
+                class="img-thumbnail rounded-circle float-start"
+              />
+            </div>
+            <div class="container-fluid align-items-center">
+              <h2>{{ review.title }}</h2>
+              <!-- Display the name of the associated course -->
+              {% set course = courses.filter(cid=review.cid).first() %}
+              <p class="fst-italic ">{{ course.name }}</p>
+              <p class="display-7">{{ review.desciption }}</p>
+            </div>
+          </div>
         </li>
         {% endfor %}
       </ul>
     </div>
-    <div class="flex flex-fill bg-body p-4 rounded-3">
-      <h2 class="display-3 text-center">{{ prof.name }}</h2>
-      <p>{{ prof.description }}</p>
-      <p>
-        Requires Attendance: {% if prof.attendance %} Yes {% else %} No {% endif
-        %}
-      </p>
-    </div>
   </div>
-
-  <h3>Reviews:</h3>
-  <ul>
-    {% for review_id in prof.rids %} {% set review =
-    reviews.filter(rid=review_id).first() %}
-    <li>{{ review.title }}</li>
-    <!-- Display the name of the associated course -->
-    {% set course = courses.filter(cid=review.cid).first() %}
-    <p>Course: {{ course.name }}</p>
-    <p>Description: {{ review.desciption }}</p>
-    {% endfor %}
-  </ul>
-
-  <!-- Section to Add a Review -->
-  <h3>Add a Review:</h3>
-  <form method="POST" action="{{ url_for('add_review', prof_id=prof.pid) }}">
-      <label for="course">Select Course:</label>
-      <select name="course" id="course">
-          {% for course_id in prof.cids %}
-              {% set course = courses.filter(cid=course_id).first() %}
-              <option value="{{ course.cid }}">{{ course.name }}</option>
-          {% endfor %}
-      </select>
-      <br>
-      <label for="title">Title:</label><br>
-      <input type="text" id="title" name="title" required><br>
-      <label for="description">Description:</label><br>
-      <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
-      <input type="submit" value="Submit Review">
-  </form>
 </div>
 {% endblock %}
