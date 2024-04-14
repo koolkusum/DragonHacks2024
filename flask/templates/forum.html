@@ -1,27 +1,32 @@
 {% extends "base_template.html" %} {% block content %}
 <div class="container-fluid align-items-center rounded-4 vh-100 p-4">
   <div class="bg-info-subtle flex flex-wrap h-100 p-4">
-      <h1 class="text-center flex flex-fill display-1 p-4">Courses</h1>
-      <ul class="list-group">
-        {% for course in courses %}
-        <li class="list-group-item" aria-current="true">
-          <a
-            href="{{ url_for('course', course_id=course.cid) }}"
-            class="link-underline link-underline-opacity-0"
-          >
-            <h2>{{ course.name }} : <em>01:198:{{ course.cid }}</em></h2>
-          </a>
-        </li>
-        {#
-        <p>{{ course.cid }}</p>
-        #} {#
-        <p>Coding: {% if course.coding %} Yes {% else %} No {% endif %}</p>
-        <p>Theory: {% if course.theory %} Yes {% else %} No {% endif %}</p>
-        #}
-        <!-- Link to course page -->
-        {% endfor %}
-      </ul>
-    </div>
+    <h1 class="text-center flex flex-fill display-1 p-4">Courses</h1>
+    <ul class="list-group">
+      {% for course in courses %}
+      <li class="list-group-item" aria-current="true">
+        <a
+          href="{{ url_for('course', course_id=course.cid) }}"
+          class="link-underline link-underline-opacity-0"
+        >
+          <h2>{{ course.name }} : <em>01:198:{{ course.cid }}</em></h2>
+        </a>
+      </li>
+      {#
+      <p>{{ course.cid }}</p>
+      #} {#
+      <p>Coding: {% if course.coding %} Yes {% else %} No {% endif %}</p>
+      <p>Theory: {% if course.theory %} Yes {% else %} No {% endif %}</p>
+      #}
+      <!-- Link to course page -->
+      {% endfor %}
+    </ul>
+  </div>
+  {% if admin_mode %}
+        <form action="/admin_action" method="post">
+            <button type="submit" class="btn btn-danger">Admin Action</button>
+        </form>
+  {% endif %}
 </div>
 
 {% endblock %}

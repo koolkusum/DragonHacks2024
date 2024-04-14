@@ -33,6 +33,8 @@ import requests
 
 from calendarinter import convert_to_iso8601, delete_calendar_event, get_credentials, parse_datetime_to_day_number, parse_event_details
 
+admin_mode = True
+
 SCOPES = ['https://www.googleapis.com/auth/calendar',  'https://www.googleapis.com/auth/presentations', 'https://www.googleapis.com/auth/documents']
 
 
@@ -657,7 +659,7 @@ def rank_keywords():
 @app.route('/forum')
 def forum():
     courses = Course.objects()
-    return render_template('forum.html', courses=courses)
+    return render_template('forum.html', courses=courses, admin_mode=admin_mode)
 
 @app.route('/course/<int:course_id>')
 def course(course_id):
@@ -722,6 +724,18 @@ def match():
     else:
         # Redirect GET requests to the same page where the form is rendered
         return redirect(url_for('match_form'))
+
+from course_scrape import get_course_urls, print_retrieved_urls, get_course_info, print_course_contents, print_all_courses
+
+def admin_action():
+    print_all_courses()
+
+@app.route('/admin_action', methods=['POST'])
+def handle_admin_action():
+    if admin_mode:
+        # Perform admin action here
+        admin_action()
+    return redirect(url_for('forum'))
 
 if __name__ == "__main__":
     app.run(debug=True)
