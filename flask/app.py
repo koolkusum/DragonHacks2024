@@ -732,6 +732,15 @@ def forum():
     courses = Course.objects()
     return render_template('forum.html', courses=courses, admin_mode=admin_mode)
 
+@app.route('/search', methods=['GET'])
+def search():
+    cid = request.args.get('cid', '')  # Get the CID from the query parameter
+    if cid:
+        return redirect(url_for('course', course_id=cid))  # Redirect to the course page with the given CID
+    else:
+        return redirect(url_for('forum'))
+    
+
 @app.route('/course/<int:course_id>')
 def course(course_id):
     course = Course.objects(cid=course_id).first()  # Retrieve the course with the specified ID
