@@ -1,3 +1,4 @@
+import json
 from app import *
 import google.generativeai as genai
 
@@ -43,22 +44,7 @@ def generate_reviews_for_profs():
         
     #print(parse_reviews(response.text))
 
-def parse_reviews(raw_string):
-    # Remove the double quotes around the string and split it into individual records
-    records = raw_string.strip('"').split('},{')
-    
-    # Add back the curly braces for each record to make them valid JSON objects
-    records = ['{' + record + '}' for record in records]
-    
-    # Parse each record as JSON and extract the title and description
-    reviews = []
-    for record in records:
-        data = json.loads(record)
-        title = data.get('title')
-        description = data.get('description')
-        reviews.append({'title': title, 'description': description})
-    
-    return reviews
-    
+
+
 generate_reviews_for_profs()
             
