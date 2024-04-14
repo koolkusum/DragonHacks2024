@@ -10,7 +10,7 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from flask import send_from_directory
 from werkzeug.utils import secure_filename
-from mongoengine import Document, StringField, ListField, BooleanField, IntField
+from mongoengine import Document, StringField, ListField, BooleanField, IntField, Autofield
 
 
 from datetime import date, datetime, timedelta, timezone
@@ -152,7 +152,7 @@ class Professor(Document):
             print(f'CID {cid} not found in Professor {self.name}')
 
 class Review(Document):
-    rid = mongoengine.fields.AutoField(primary_key=True)
+    rid = IntField(required=True, unique=True)
     pid = IntField(required=True)
     title = StringField(required=True)
     desciption = StringField(required=True)
@@ -746,9 +746,11 @@ def add_review(prof_id):
 
         # Find the professor
         professor = Professor.objects(pid=prof_id).first()
-
+        max_rid = Review.objects.aggregate({"$group": {"_id": None, "max_rid": {"$max": "$rid"}}})
+        next_rid = max_rid[0]['max_rid'] + 1 if max_rid else 1
         # Create a new review
         review = Review(
+            rid= next_rid,
             title=title,
             desciption=description,
             cid=course_id,
