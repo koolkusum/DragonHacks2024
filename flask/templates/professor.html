@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../static/chatbot.css"
-</head>
-<body>
-    <h1>ProfessorDetails</h1>
+{% extends "base_template.html" %} {% block content %}
+<div class="container-fluid align-items-center rounded-4 vh-100 p-4">
+    
     <h2>{{ prof.name }}</h2>
     <p>{{ prof.description }}</p>
     <p>Requires Attendance: {% if prof.attendance %} Yes {% else %} No {% endif %}</p>
@@ -33,6 +25,5 @@
             <p>Description: {{ review.desciption }}</p>
         {% endfor %}
     </ul>
-</body>
-
-</html>
+</div>
+{% endblock %}

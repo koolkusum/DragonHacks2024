@@ -1,25 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../static/chatbot.css">
-</head>
-<body>
-    <h1>Courses</h1>
-    <ul>
+{% extends "base_template.html" %} {% block content %}
+<div class="container-fluid align-items-center rounded-4 vh-100 p-4">
+  <div class="bg-info-subtle flex flex-wrap h-100 p-4">
+      <h1 class="text-center flex flex-fill display-1">Courses</h1>
+      <ul class="list-group">
         {% for course in courses %}
-        <li>
-            <h2>{{ course.name }}</h2>
-            <p>Course ID: {{ course.cid }}</p>
-            <p>Coding: {% if course.coding %} Yes {% else %} No {% endif %}</p>
-            <p>Theory: {% if course.theory %} Yes {% else %} No {% endif %}</p>
-            <a href="{{ url_for('course', course_id=course.cid) }}">View Details</a>  <!-- Link to course page -->
-
+        <li class="list-group-item" aria-current="true">
+          <a
+            href="{{ url_for('course', course_id=course.cid) }}"
+            class="link-underline link-underline-opacity-0"
+          >
+            <h2>{{ course.name }} : <em>01:198:{{ course.cid }}</em></h2>
+          </a>
         </li>
+        {#
+        <p>{{ course.cid }}</p>
+        #} {#
+        <p>Coding: {% if course.coding %} Yes {% else %} No {% endif %}</p>
+        <p>Theory: {% if course.theory %} Yes {% else %} No {% endif %}</p>
+        #}
+        <!-- Link to course page -->
         {% endfor %}
-    </ul>
-</body>
-</html>
+      </ul>
+    </div>
+</div>
+
+{% endblock %}

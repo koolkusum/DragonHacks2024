@@ -120,18 +120,27 @@ def load():
     # )
     # prof1.save()
     
-    review1 = Review(
-    rid = 0,
-    pid = 0,
-    title = "Centeno is the best professor",
-    desciption ="She is super understanding and caring of her students and does her best to make sure they pass.",
-    cid=111
+    prof2 = Professor(
+    pid = 1,
+    name = "Brian Harrington",
+    desc="Brian Harrington is a professor of Data Structures and Algorithms.",
+    attendance = False,
+    cids = [111]
     )
-    review1.save()
+    prof2.save()
+    print("prof2 saved")
+    # review1 = Review(
+    # rid = 0,
+    # pid = 0,
+    # title = "Centeno is the best professor",
+    # desciption ="She is super understanding and caring of her students and does her best to make sure they pass.",
+    # cid=111
+    # )
+    # review1.save()
      
 @app.route("/")
 def mainpage():
-   # load()
+    # load()
     return render_template("main.html")
 
 @app.route("/signup", methods=["GET", "POST"])
