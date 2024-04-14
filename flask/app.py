@@ -778,6 +778,8 @@ def add_review(prof_id):
 
     return redirect(url_for('professor', prof_id=prof_id))
 
+
+
 @app.route('/match', methods=['GET'])
 def match_form():
     courses = Course.objects()
@@ -793,12 +795,26 @@ def match():
         attendance_required = attendance == 'true'
         courses = Course.objects()
 
-
         # Find professors who teach the selected courses and meet the attendance preference
         professors = Professor.objects(cids__in=selected_courses, attendance=attendance_required)
+        generated_descriptions = []  # Store the generated descriptions
+
+        for prof in professors:
+            input_value = "The professor name " + prof.name + " and professor description " + prof.desc
+            if prof.rids:
+                # Retrieve the first review document
+                first_review = Review.objects(rid=prof.rids[0]).first()
+                if first_review:
+                    input_value += f". First Review: {first_review.title} - {first_review.desciption}"
+            input_value += " based on this information can you write why this professor will be a good fit for the user,"
+            model = genai.GenerativeModel('models/gemini-pro')
+            result = model.generate_content(input_value)
+            formatted_message = BeautifulSoup(result.text, "html.parser").get_text()
+            generated_descriptions.append(formatted_message)
+
 
         # Pass the found professors to a template for rendering
-        return render_template('match.html', professors=professors, courses = courses)
+        return render_template('match.html', professors=professors, courses = courses, generated_descriptions=generated_descriptions)
     else:
         # Redirect GET requests to the same page where the form is rendered
         return redirect(url_for('match_form'))
